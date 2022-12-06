@@ -28,9 +28,9 @@ void PrintArrayMas(int[,] numbers)
 {
     int stroc = numbers.GetLength(0);
     int stolb = numbers.GetLength(1);
-    for (int i = 0; i < stroc; i++)
+    for (int i = 0; i < stolb; i++)
     {
-        for (int j = 0; j < stolb; j++)
+        for (int j = 0; j < stroc; j++)
         {
             Console.Write($"{numbers[i, j]}\t");
         }
@@ -48,9 +48,9 @@ void Poick2mer(int[,] numbers, int minRazmer = 0, int maxRazmer = 9)
     Random rand = new Random();
     int stroc = numbers.GetLength(0);
     int stolb = numbers.GetLength(1);
-    for (int i = 0; i < stroc; i++)
+    for (int i = 0; i < stolb; i++)
     {
-        for (int j = 0; j < stolb && !flag; j++)
+        for (int j = 0; j < stroc && !flag; j++)
         {
             flag = numbers[i, j] == N;
             if (numbers[i, j] == N)
