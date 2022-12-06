@@ -9,7 +9,7 @@ void Zadanie36()
     Poick2mer(numbers);
     PrintArrayMas(numbers);
 }
-void FilArray(int[,] numbers, int minRazmer = 0, int maxRazmer = 9)
+void FilArray(int[,] numbers, int minRazmer = -10, int maxRazmer = 10)
 {
     maxRazmer++;
     Random rand = new Random();
@@ -32,7 +32,7 @@ void PrintArrayMas(int[,] numbers)
     {
         for (int j = 0; j < stolb; j++)
         {
-            Console.Write($"{numbers[i, j]} ");
+            Console.Write($"{numbers[i, j]}\t");
         }
         Console.WriteLine();
     }
