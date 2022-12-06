@@ -7,7 +7,7 @@ void Zadanie36()
     int[,] numbers = new int[stroc, stolb];
     FilArray(numbers);
     Poick2mer(numbers);
-    Array(numbers);
+    PrintArrayMas(numbers);
 }
 void FilArray(int[,] numbers, int minRazmer = 0, int maxRazmer = 9)
 {
@@ -24,19 +24,17 @@ void FilArray(int[,] numbers, int minRazmer = 0, int maxRazmer = 9)
     }
 }
 
-void Array(int[,] numbers, int minRazmer = 0, int maxRazmer = 9)
+void PrintArrayMas(int[,] numbers)
 {
-    maxRazmer++;
-    Random rand = new Random();
     int stroc = numbers.GetLength(0);
     int stolb = numbers.GetLength(1);
     for (int i = 0; i < stroc; i++)
     {
         for (int j = 0; j < stolb; j++)
         {
-            Console.WriteLine($"A[{i}, {j}] = {numbers[i, j]}");
-
+            Console.Write($"{numbers[i, j]} ");
         }
+        Console.WriteLine();
     }
 }
 
@@ -56,14 +54,18 @@ void Poick2mer(int[,] numbers, int minRazmer = 0, int maxRazmer = 9)
         {
             flag = numbers[i, j] == N;
             if (numbers[i, j] == N)
-                h = ($"A[{i}, {j}]");
+            {
+                i++;
+                j++;
+                h = ($"Столбец {i}, {j} чисто в строке");
+            }
         }
     }
     if (flag)
     {
         Console.WriteLine();
         Console.WriteLine($"В массиве число {N} присутствует!");
-        Console.WriteLine($"Находится в {h}");
+        Console.WriteLine($"{h}");
     }
     else
     {
